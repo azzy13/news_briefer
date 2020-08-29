@@ -4,5 +4,5 @@ Alas can't deploy this because apparently since 22 May 2020 they changed the lib
 
 To use this app -
 
-Install dependencies using "npm i"
-Run "npm run start"
+1) Install dependencies using "npm i"
+2) Run "npm run start"
