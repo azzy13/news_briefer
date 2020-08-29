@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Moment from 'moment';
 
 const NewsItem = ({ NewsReducer }) => {
   return (
@@ -31,7 +30,7 @@ const NewsItem = ({ NewsReducer }) => {
 };
 
 NewsItem.propTypes = {
-  NewsReducer: PropTypes.array.isRequired,
+  NewsReducer: PropTypes.object.isRequired,
 };
 
 export default NewsItem;
