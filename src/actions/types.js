@@ -1,0 +1,11 @@
+export const GET_DATA = 'GET_DATA';
+export const SET_LOADING = 'SET_LOADING';
+export const LOGS_ERROR = 'LOGS_ERROR';
+export const SEARCH_NEWS = 'SEARCH_NEWS';
+export const INDIA_NEWS = 'INDIA_NEWS';
+export const BUSINESS_NEWS = 'BUSINESS_NEWS';
+export const TECH_NEWS = 'TECH_NEWS';
+export const HEALTH_NEWS = 'HEALTH_NEWS';
+export const SPORTS_NEWS = 'SPORTS_NEWS';
+export const SCIENCE_NEWS = 'SCIENCE_NEWS';
+export const ENT_NEWS = 'ENT_NEWS';
