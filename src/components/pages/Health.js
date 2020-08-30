@@ -19,7 +19,7 @@ const Health = ({ new: { news, loading }, healthNews }) => {
     <ul>
       <br />
       <h5 className='center pink-text'>
-        <strong>JHealth News</strong>{' '}
+        <strong>Health News</strong>{' '}
       </h5>
       <div className='UserStyle'>
         {!loading && news.length === 0 ? (
