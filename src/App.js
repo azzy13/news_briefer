@@ -46,7 +46,7 @@ const App = () => {
               <Route exact path='/news_briefer/business' component={Business} />
 
               <div className='cus_container'>
-                <Route exact path='/about' component={About} />
+                <Route exact path='/news_briefer/about' component={About} />
               </div>
             </Switch>
           </div>
