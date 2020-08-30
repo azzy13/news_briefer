@@ -12,7 +12,12 @@ const NewsItem = ({ NewsReducer }) => {
         className='responsive-img card-image'
         id='cus_displayimg'
       />
-      <a href={NewsReducer.url} className='cus_heading'>
+      <a
+        target='_blank'
+        rel='noopener noreferrer'
+        href={NewsReducer.url}
+        className='cus_heading'
+      >
         <h5>{NewsReducer.title}</h5>
       </a>
       <p>{NewsReducer.description}</p>
@@ -23,7 +28,12 @@ const NewsItem = ({ NewsReducer }) => {
       </p>
       <br />
       <div className='center-align cus_flex'>
-        <a href={NewsReducer.url} className='btn btn-pink btn-sm my-1 cus_btn'>
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          href={NewsReducer.url}
+          className='btn btn-pink btn-sm my-1 cus_btn'
+        >
           Full Story Here &#10132;
         </a>
       </div>

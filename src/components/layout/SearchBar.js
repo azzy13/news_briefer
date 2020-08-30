@@ -41,38 +41,40 @@ const SearchBar = ({ searchNews }) => {
 
   return (
     <div>
-      <nav>
-        <div className='nav-wrapper'>
-          <ul>
-            <li>
-              <a href='/news_briefer/'>
-                <i className='material-icons'>insert_chart</i>
-              </a>
-            </li>
-            <li>
-              <a
-                href='#!'
-                className='brand-logo right sidenav-trigger'
-                data-target='mobile-demo'
-              >
-                <i className='medium material-icons'>menu</i>
-              </a>
-            </li>
+      <div className='navbar-fixed'>
+        <nav>
+          <div className='nav-wrapper'>
+            <ul>
+              <li>
+                <a href='/news_briefer/'>
+                  <i className='material-icons'>insert_chart</i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href='#!'
+                  className='brand-logo right sidenav-trigger'
+                  data-target='mobile-demo'
+                >
+                  <i className='medium material-icons'>menu</i>
+                </a>
+              </li>
 
-            <li>
-              <form onSubmit={onSubmit}>
-                <input
-                  type='search'
-                  id='search'
-                  value={text}
-                  placeholder='Search News'
-                  onChange={onChange}
-                />
-              </form>
-            </li>
-          </ul>
-        </div>
-      </nav>
+              <li>
+                <form onSubmit={onSubmit}>
+                  <input
+                    type='search'
+                    id='search'
+                    value={text}
+                    placeholder='Search News'
+                    onChange={onChange}
+                  />
+                </form>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
 
       <ul className='sidenav' id='mobile-demo'>
         <li>
@@ -92,13 +94,19 @@ const SearchBar = ({ searchNews }) => {
           </div>
         </li>
         <li>
-          <a href='/news_briefer/'>World Top Stories</a>
+          <Link className='sidenav-close' to='/news_briefer/'>
+            World Top Stories
+          </Link>
         </li>
         <li>
           <div className='divider'></div>
         </li>
         <li>
-          <Link to='/news_briefer/india' onClick={() => <India />}>
+          <Link
+            className='sidenav-close'
+            to='/news_briefer/india'
+            onClick={() => <India />}
+          >
             India
           </Link>
         </li>
@@ -106,32 +114,56 @@ const SearchBar = ({ searchNews }) => {
           <div className='divider'></div>
         </li>
         <li>
-          <Link to='/news_briefer/tech' onClick={() => <Tech />}>
+          <Link
+            className='sidenav-close'
+            to='/news_briefer/tech'
+            onClick={() => <Tech />}
+          >
             Technology
           </Link>
         </li>
         <li>
-          <Link to='/news_briefer/sports' onClick={() => <Sports />}>
+          <Link
+            className='sidenav-close'
+            to='/news_briefer/sports'
+            onClick={() => <Sports />}
+          >
             Sports
           </Link>
         </li>
         <li>
-          <Link to='/news_briefer/business' onClick={() => <Business />}>
+          <Link
+            className='sidenav-close'
+            to='/news_briefer/business'
+            onClick={() => <Business />}
+          >
             Business
           </Link>
         </li>
         <li>
-          <Link to='/news_briefer/health' onClick={() => <Health />}>
+          <Link
+            className='sidenav-close'
+            to='/news_briefer/health'
+            onClick={() => <Health />}
+          >
             Health
           </Link>
         </li>
         <li>
-          <Link to='/news_briefer/science' onClick={() => <Science />}>
+          <Link
+            className='sidenav-close'
+            to='/news_briefer/science'
+            onClick={() => <Science />}
+          >
             Science
           </Link>
         </li>
         <li>
-          <Link to='/news_briefer/entertainment' onClick={() => <Ent />}>
+          <Link
+            className='sidenav-close'
+            to='/news_briefer/entertainment'
+            onClick={() => <Ent />}
+          >
             Entertainment
           </Link>
         </li>
@@ -139,13 +171,17 @@ const SearchBar = ({ searchNews }) => {
           <div className='divider'></div>
         </li>
         <li>
-          <Link to='/news_briefer/about'>About</Link>
+          <Link className='sidenav-close' to='/news_briefer/about'>
+            About
+          </Link>
         </li>
         <li>
           <div className='divider'></div>
         </li>
         <li>
-          <Link to='/news_briefer/login'>Login</Link>
+          <Link className='sidenav-close' to='/news_briefer/login'>
+            Login
+          </Link>
         </li>
       </ul>
     </div>
