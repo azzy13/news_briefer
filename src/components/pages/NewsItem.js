@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import peepo from '../../img/peepo.png';
+
 const NewsItem = ({ NewsReducer }) => {
   return (
     <div className='card hoverable' key={NewsReducer.title}>
       <img
         src={NewsReducer.urlToImage}
+        onerror='
+        this.src={peepo}'
         alt='Sad Life No Pic'
         className='responsive-img card-image'
         id='cus_displayimg'

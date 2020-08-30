@@ -18,7 +18,7 @@ export const getNews = (page) => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      `https://newsapi.org/v2/top-headlines?page=${page}&country=us&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=us&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
     );
     const data = await res.json();
 
@@ -40,7 +40,7 @@ export const searchNews = (text) => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      `https://newsapi.org/v2/everything?q=${text}&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
+      `https://yacdn.org/proxy/https://newsapi.org/v2/everything?q=${text}&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
     );
     const data = await res.json();
 
@@ -62,7 +62,7 @@ export const indNews = () => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      'http://newsapi.org/v2/top-headlines?country=in&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
+      'https://yacdn.org/proxy/http://newsapi.org/v2/top-headlines?country=in&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
     );
     const data = await res.json();
     dispatch({
@@ -83,7 +83,7 @@ export const sciNews = () => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      'http://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
+      'https://yacdn.org/proxy/http://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
     );
     const data = await res.json();
     dispatch({
@@ -104,7 +104,7 @@ export const sportNews = () => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      'http://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
+      'https://yacdn.org/proxy/http://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
     );
     const data = await res.json();
     dispatch({
@@ -125,7 +125,7 @@ export const entNews = () => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      'http://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
+      'https://yacdn.org/proxy/http://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
     );
     const data = await res.json();
     dispatch({
@@ -146,7 +146,7 @@ export const techNews = () => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      'http://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
+      'https://yacdn.org/proxy/http://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
     );
     const data = await res.json();
     dispatch({
@@ -167,7 +167,7 @@ export const healthNews = () => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      'http://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
+      'https://yacdn.org/proxy/http://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
     );
     const data = await res.json();
     dispatch({
@@ -188,7 +188,7 @@ export const busNews = () => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      'http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
+      'https://yacdn.org/proxy/http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
     );
     const data = await res.json();
     dispatch({
