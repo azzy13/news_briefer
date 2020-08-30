@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import dateFormat from 'dateformat';
 
 const NewsItem = ({ NewsReducer }) => {
   return (
@@ -22,7 +23,10 @@ const NewsItem = ({ NewsReducer }) => {
       </a>
       <p>{NewsReducer.description}</p>
 
-      <p className=''>Published At: {NewsReducer.publishedAt}</p>
+      <p className=''>
+        Published At:{' '}
+        {dateFormat(NewsReducer.publishedAt, 'mmmm dS, yyyy, h:MM:ss TT')}
+      </p>
       <p>
         <strong>Source: {NewsReducer.source.name}</strong>
       </p>
