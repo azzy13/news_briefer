@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { searchNews } from '../../actions/NewsActions';
+import { Link } from 'react-router-dom';
 
 import Business from '../pages/Business';
 import Health from '../pages/Health';
@@ -97,9 +98,9 @@ const SearchBar = ({ searchNews }) => {
           <div className='divider'></div>
         </li>
         <li>
-          <a href='/news_briefer/india' onClick={() => <India />}>
+          <Link to='/news_briefer/india' onClick={() => <India />}>
             India
-          </a>
+          </Link>
         </li>
         <li>
           <div className='divider'></div>
