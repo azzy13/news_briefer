@@ -106,46 +106,46 @@ const SearchBar = ({ searchNews }) => {
           <div className='divider'></div>
         </li>
         <li>
-          <a href='/news_briefer/tech' onClick={() => <Tech />}>
+          <Link to='/news_briefer/tech' onClick={() => <Tech />}>
             Technology
-          </a>
+          </Link>
         </li>
         <li>
-          <a href='/news_briefer/sports' onClick={() => <Sports />}>
+          <Link to='/news_briefer/sports' onClick={() => <Sports />}>
             Sports
-          </a>
+          </Link>
         </li>
         <li>
-          <a href='/news_briefer/business' onClick={() => <Business />}>
+          <Link to='/news_briefer/business' onClick={() => <Business />}>
             Business
-          </a>
+          </Link>
         </li>
         <li>
-          <a href='/news_briefer/health' onClick={() => <Health />}>
+          <Link to='/news_briefer/health' onClick={() => <Health />}>
             Health
-          </a>
+          </Link>
         </li>
         <li>
-          <a href='/news_briefer/science' onClick={() => <Science />}>
+          <Link to='/news_briefer/science' onClick={() => <Science />}>
             Science
-          </a>
+          </Link>
         </li>
         <li>
-          <a href='/news_briefer/entertainment' onClick={() => <Ent />}>
+          <Link to='/news_briefer/entertainment' onClick={() => <Ent />}>
             Entertainment
-          </a>
+          </Link>
         </li>
         <li>
           <div className='divider'></div>
         </li>
         <li>
-          <a href='/news_briefer/about'>About</a>
+          <Link to='/news_briefer/about'>About</Link>
         </li>
         <li>
           <div className='divider'></div>
         </li>
         <li>
-          <a href='/news_briefer/login'>Login</a>
+          <Link to='/news_briefer/login'>Login</Link>
         </li>
       </ul>
     </div>
