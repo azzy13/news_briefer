@@ -11,6 +11,7 @@ import India from './components/pages/India';
 import Science from './components/pages/Science';
 import Ent from './components/pages/Ent';
 import Sports from './components/pages/Sports';
+import News from './components/pages/News';
 
 import store from './store';
 import { Provider } from 'react-redux';
@@ -27,7 +28,7 @@ const App = () => {
   });
   return (
     <Provider store={store}>
-      <Router>
+      <Router forceRefresh={true}>
         <Fragment>
           <SearchBar />
 
@@ -37,6 +38,7 @@ const App = () => {
           >
             <Switch>
               <Route exact path='/news_briefer/' component={Home} />
+              <Route exact path='/news_briefer/news' component={News} />
               <Route exact path='/news_briefer/entertainment' component={Ent} />
               <Route exact path='/news_briefer/health' component={Health} />
               <Route exact path='/news_briefer/sports' component={Sports} />

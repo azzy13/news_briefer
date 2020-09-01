@@ -10,6 +10,7 @@ import {
   BUSINESS_NEWS,
   TECH_NEWS,
   HEALTH_NEWS,
+  SET_PAGE,
 } from './types';
 
 //fetch news
@@ -18,7 +19,7 @@ export const getNews = (page) => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=us&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&language=en&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
     );
     const data = await res.json();
 
@@ -26,6 +27,8 @@ export const getNews = (page) => async (dispatch) => {
       type: GET_DATA,
       payload: data.articles,
     });
+
+    setPage();
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
@@ -35,12 +38,12 @@ export const getNews = (page) => async (dispatch) => {
 };
 
 // Search logs
-export const searchNews = (text) => async (dispatch) => {
+export const searchNews = (text, page) => async (dispatch) => {
   try {
     setLoading();
 
     const res = await fetch(
-      `https://yacdn.org/proxy/https://newsapi.org/v2/everything?q=${text}&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
+      `https://yacdn.org/proxy/https://newsapi.org/v2/everything?page=${page}&q=${text}&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
     );
     const data = await res.json();
 
@@ -48,6 +51,8 @@ export const searchNews = (text) => async (dispatch) => {
       type: SEARCH_NEWS,
       payload: data.articles,
     });
+
+    setPage();
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
@@ -57,18 +62,20 @@ export const searchNews = (text) => async (dispatch) => {
 };
 
 // India news
-export const indNews = () => async (dispatch) => {
+export const indNews = (page) => async (dispatch) => {
   try {
     setLoading();
 
     const res = await fetch(
-      'https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?country=in&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=in&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
     );
     const data = await res.json();
     dispatch({
       type: INDIA_NEWS,
       payload: data.articles,
     });
+
+    setPage();
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
@@ -78,18 +85,20 @@ export const indNews = () => async (dispatch) => {
 };
 
 //Sciene news
-export const sciNews = () => async (dispatch) => {
+export const sciNews = (page) => async (dispatch) => {
   try {
     setLoading();
 
     const res = await fetch(
-      'https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=us&category=science&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
     );
     const data = await res.json();
     dispatch({
       type: SCIENCE_NEWS,
       payload: data.articles,
     });
+
+    setPage();
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
@@ -99,18 +108,20 @@ export const sciNews = () => async (dispatch) => {
 };
 
 //Sports news
-export const sportNews = () => async (dispatch) => {
+export const sportNews = (page) => async (dispatch) => {
   try {
     setLoading();
 
     const res = await fetch(
-      'https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=in&category=sports&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
     );
     const data = await res.json();
     dispatch({
       type: SPORTS_NEWS,
       payload: data.articles,
     });
+
+    setPage();
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
@@ -120,18 +131,20 @@ export const sportNews = () => async (dispatch) => {
 };
 
 //Ent news
-export const entNews = () => async (dispatch) => {
+export const entNews = (page) => async (dispatch) => {
   try {
     setLoading();
 
     const res = await fetch(
-      'https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=us&category=entertainment&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
     );
     const data = await res.json();
     dispatch({
       type: ENT_NEWS,
       payload: data.articles,
     });
+
+    setPage();
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
@@ -141,18 +154,20 @@ export const entNews = () => async (dispatch) => {
 };
 
 //Tech news
-export const techNews = () => async (dispatch) => {
+export const techNews = (page) => async (dispatch) => {
   try {
     setLoading();
 
     const res = await fetch(
-      'https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&category=technology&country=us&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
     );
     const data = await res.json();
     dispatch({
       type: TECH_NEWS,
       payload: data.articles,
     });
+
+    setPage();
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
@@ -162,18 +177,20 @@ export const techNews = () => async (dispatch) => {
 };
 
 //Health news
-export const healthNews = () => async (dispatch) => {
+export const healthNews = (page) => async (dispatch) => {
   try {
     setLoading();
 
     const res = await fetch(
-      'https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=us&category=health&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
     );
     const data = await res.json();
     dispatch({
       type: HEALTH_NEWS,
       payload: data.articles,
     });
+
+    setPage();
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
@@ -183,18 +200,20 @@ export const healthNews = () => async (dispatch) => {
 };
 
 // Business news
-export const busNews = () => async (dispatch) => {
+export const busNews = (page) => async (dispatch) => {
   try {
     setLoading();
 
     const res = await fetch(
-      'https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=ad2da63f7b9844b4a366d4c19afb0537'
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=us&category=business&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
     );
     const data = await res.json();
     dispatch({
       type: BUSINESS_NEWS,
       payload: data.articles,
     });
+
+    setPage();
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
@@ -207,5 +226,12 @@ export const busNews = () => async (dispatch) => {
 export const setLoading = () => {
   return {
     type: SET_LOADING,
+  };
+};
+
+//Set page
+export const setPage = () => {
+  return {
+    type: SET_PAGE,
   };
 };

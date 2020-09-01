@@ -1,32 +1,33 @@
 import React from 'react';
 import Preloader from '../layout/Preloader';
-import { searchNews } from '../../actions/NewsActions';
+import { getNews } from '../../actions/NewsActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NewsItem from './NewsItem';
 
 import InfiniteScroll from 'react-infinite-scroller';
 
-const Home = ({ new: { news, loading }, searchNews }) => {
+const News = ({ new: { snews, loading }, getNews }) => {
   return (
     <div>
       <ul>
         <br />
         <h5 className='center pink-text'>
-          <strong>Search News</strong>{' '}
+          <strong>Latest News</strong>{' '}
         </h5>
+
         <div className='UserStyle'>
-          {!loading && news.length === 0 ? (
+          {!loading && snews.length === 0 ? (
             <Preloader />
           ) : (
-            news.map((NewsReducer) => (
+            snews.map((NewsReducer) => (
               <NewsItem NewsReducer={NewsReducer} key={NewsReducer.title} />
             ))
           )}
           <InfiniteScroll
             pageStart={0}
-            loadMore={searchNews}
-            hasMore={news.length < 700}
+            loadMore={getNews}
+            hasMore={snews.length < 100}
           ></InfiniteScroll>
         </div>
       </ul>
@@ -34,7 +35,7 @@ const Home = ({ new: { news, loading }, searchNews }) => {
   );
 };
 
-Home.propTypes = {
+News.propTypes = {
   searchNews: PropTypes.func.isRequired,
 };
 
@@ -43,4 +44,4 @@ const mapStateToProps = (state) => ({
   new: state.NewsReducer,
 });
 
-export default connect(mapStateToProps, { searchNews })(Home);
+export default connect(mapStateToProps, { getNews })(News);

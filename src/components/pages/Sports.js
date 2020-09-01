@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Preloader from '../layout/Preloader';
 import { sportNews } from '../../actions/NewsActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NewsItem from './NewsItem';
 
-const Sports = ({ new: { news, loading }, sportNews }) => {
-  useEffect(() => {
-    sportNews();
-    //eslint-disable-next-line
-  }, []);
+import InfiniteScroll from 'react-infinite-scroller';
 
-  if (loading || news === null) {
+const Sports = ({ new: { sportnews, loading }, sportNews }) => {
+  if (loading || sportnews === null) {
     return <Preloader />;
   }
 
@@ -22,20 +19,25 @@ const Sports = ({ new: { news, loading }, sportNews }) => {
         <strong>Sports News</strong>{' '}
       </h5>
       <div className='UserStyle'>
-        {!loading && news.length === 0 ? (
+        {!loading && sportnews.length === 0 ? (
           <Preloader />
         ) : (
-          news.map((NewsReducer) => (
+          sportnews.map((NewsReducer) => (
             <NewsItem NewsReducer={NewsReducer} key={NewsReducer.title} />
           ))
         )}
+        <InfiniteScroll
+          pageStart={0}
+          loadMore={sportNews}
+          hasMore={sportnews.length < 69}
+        ></InfiniteScroll>
       </div>
     </ul>
   );
 };
 
 Sports.propTypes = {
-  news: PropTypes.array.isRequired,
+  sportnews: PropTypes.array.isRequired,
   sportNews: PropTypes.func.isRequired,
 };
 

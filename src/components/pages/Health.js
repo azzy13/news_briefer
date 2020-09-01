@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Preloader from '../layout/Preloader';
 import { healthNews } from '../../actions/NewsActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NewsItem from './NewsItem';
 
-const Health = ({ new: { news, loading }, healthNews }) => {
-  useEffect(() => {
-    healthNews();
-    //eslint-disable-next-line
-  }, []);
+import InfiniteScroll from 'react-infinite-scroller';
 
-  if (loading || news === null) {
+const Health = ({ new: { healthnews, loading }, healthNews }) => {
+  if (loading || healthnews === null) {
     return <Preloader />;
   }
 
@@ -22,20 +19,25 @@ const Health = ({ new: { news, loading }, healthNews }) => {
         <strong>Health News</strong>{' '}
       </h5>
       <div className='UserStyle'>
-        {!loading && news.length === 0 ? (
+        {!loading && healthnews.length === 0 ? (
           <Preloader />
         ) : (
-          news.map((NewsReducer) => (
+          healthnews.map((NewsReducer) => (
             <NewsItem NewsReducer={NewsReducer} key={NewsReducer.title} />
           ))
         )}
+        <InfiniteScroll
+          pageStart={0}
+          loadMore={healthNews}
+          hasMore={healthnews.length < 69}
+        ></InfiniteScroll>
       </div>
     </ul>
   );
 };
 
 Health.propTypes = {
-  news: PropTypes.array.isRequired,
+  healthnews: PropTypes.array.isRequired,
   healthNews: PropTypes.func.isRequired,
 };
 

@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Preloader from '../layout/Preloader';
 import { entNews } from '../../actions/NewsActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NewsItem from './NewsItem';
 
-const Ent = ({ new: { news, loading }, entNews }) => {
-  useEffect(() => {
-    entNews();
-    //eslint-disable-next-line
-  }, []);
+import InfiniteScroll from 'react-infinite-scroller';
 
-  if (loading || news === null) {
+const Ent = ({ new: { entnews, loading }, entNews }) => {
+  if (loading || entnews === null) {
     return <Preloader />;
   }
 
@@ -22,20 +19,25 @@ const Ent = ({ new: { news, loading }, entNews }) => {
         <strong>Entertainment News</strong>{' '}
       </h5>
       <div className='UserStyle'>
-        {!loading && news.length === 0 ? (
+        {!loading && entnews.length === 0 ? (
           <Preloader />
         ) : (
-          news.map((NewsReducer) => (
+          entnews.map((NewsReducer) => (
             <NewsItem NewsReducer={NewsReducer} key={NewsReducer.title} />
           ))
         )}
+        <InfiniteScroll
+          pageStart={0}
+          loadMore={entNews}
+          hasMore={entnews.length < 69}
+        ></InfiniteScroll>
       </div>
     </ul>
   );
 };
 
 Ent.propTypes = {
-  news: PropTypes.array.isRequired,
+  entnews: PropTypes.array.isRequired,
   entNews: PropTypes.func.isRequired,
 };
 

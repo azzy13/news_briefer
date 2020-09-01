@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Preloader from '../layout/Preloader';
 import { techNews } from '../../actions/NewsActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NewsItem from './NewsItem';
 
-const Tech = ({ new: { news, loading }, techNews }) => {
-  useEffect(() => {
-    techNews();
-    //eslint-disable-next-line
-  }, []);
+import InfiniteScroll from 'react-infinite-scroller';
 
-  if (loading || news === null) {
+const Tech = ({ new: { technews, loading }, techNews }) => {
+  if (loading || technews === null) {
     return <Preloader />;
   }
 
@@ -22,20 +19,25 @@ const Tech = ({ new: { news, loading }, techNews }) => {
         <strong>Tech News</strong>{' '}
       </h5>
       <div className='UserStyle'>
-        {!loading && news.length === 0 ? (
+        {!loading && technews.length === 0 ? (
           <Preloader />
         ) : (
-          news.map((NewsReducer) => (
+          technews.map((NewsReducer) => (
             <NewsItem NewsReducer={NewsReducer} key={NewsReducer.title} />
           ))
         )}
+        <InfiniteScroll
+          pageStart={0}
+          loadMore={techNews}
+          hasMore={technews.length < 69}
+        ></InfiniteScroll>
       </div>
     </ul>
   );
 };
 
 Tech.propTypes = {
-  news: PropTypes.array.isRequired,
+  technews: PropTypes.array.isRequired,
   techNews: PropTypes.func.isRequired,
 };
 

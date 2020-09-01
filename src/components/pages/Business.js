@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Preloader from '../layout/Preloader';
 import { busNews } from '../../actions/NewsActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NewsItem from './NewsItem';
 
-const Business = ({ new: { news, loading }, busNews }) => {
-  useEffect(() => {
-    busNews();
-    //eslint-disable-next-line
-  }, []);
+import InfiniteScroll from 'react-infinite-scroller';
 
-  if (loading || news === null) {
+const Business = ({ new: { busnews, loading }, busNews }) => {
+  if (loading || busnews === null) {
     return <Preloader />;
   }
 
@@ -22,20 +19,25 @@ const Business = ({ new: { news, loading }, busNews }) => {
         <strong>Business News</strong>{' '}
       </h5>
       <div className='UserStyle'>
-        {!loading && news.length === 0 ? (
+        {!loading && busnews.length === 0 ? (
           <Preloader />
         ) : (
-          news.map((NewsReducer) => (
+          busnews.map((NewsReducer) => (
             <NewsItem NewsReducer={NewsReducer} key={NewsReducer.title} />
           ))
         )}
+        <InfiniteScroll
+          pageStart={0}
+          loadMore={busNews}
+          hasMore={busnews.length < 69}
+        ></InfiniteScroll>
       </div>
     </ul>
   );
 };
 
 Business.propTypes = {
-  news: PropTypes.array.isRequired,
+  busnews: PropTypes.array.isRequired,
   busNews: PropTypes.func.isRequired,
 };
 

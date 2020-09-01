@@ -7,8 +7,6 @@ const NewsItem = ({ NewsReducer }) => {
     <div className='card hoverable' key={NewsReducer.title}>
       <img
         src={NewsReducer.urlToImage}
-        onerror='
-        this.src=url(../../img/peepo.png)'
         alt='Sad Life No Pic'
         className='responsive-img card-image'
         id='cus_displayimg'

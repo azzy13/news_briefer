@@ -10,13 +10,22 @@ import {
   BUSINESS_NEWS,
   TECH_NEWS,
   HEALTH_NEWS,
+  SET_PAGE,
 } from '../actions/types';
 
 const initialState = {
   news: [],
+  sportnews: [],
+  technews: [],
+  healthnews: [],
+  indianews: [],
+  scinews: [],
+  entnews: [],
+  busnews: [],
+  snews: [],
+  page: 1,
   loading: false,
   errors: null,
-  page: 1,
 };
 
 export default (state = initialState, action) => {
@@ -27,14 +36,54 @@ export default (state = initialState, action) => {
         loading: true,
       };
     case SPORTS_NEWS:
+      return {
+        ...state,
+        sportnews: [...state.sportnews, ...action.payload],
+        loading: false,
+      };
     case TECH_NEWS:
+      return {
+        ...state,
+        technews: [...state.technews, ...action.payload],
+        loading: false,
+      };
     case HEALTH_NEWS:
+      return {
+        ...state,
+        healthnews: [...state.healthnews, ...action.payload],
+        loading: false,
+      };
     case INDIA_NEWS:
+      return {
+        ...state,
+        indianews: [...state.indianews, ...action.payload],
+        loading: false,
+      };
     case SCIENCE_NEWS:
+      return {
+        ...state,
+        scinews: [...state.scinews, ...action.payload],
+        loading: false,
+      };
     case ENT_NEWS:
+      return {
+        ...state,
+        entnews: [...state.entnews, ...action.payload],
+        loading: false,
+      };
     case BUSINESS_NEWS:
-    case SEARCH_NEWS:
+      return {
+        ...state,
+        busnews: [...state.busnews, ...action.payload],
+        loading: false,
+      };
     case GET_DATA:
+      return {
+        ...state,
+        snews: [...state.snews, ...action.payload],
+        loading: false,
+      };
+    case SEARCH_NEWS:
       return {
         ...state,
         news: action.payload,
@@ -45,6 +94,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         error: action.payload,
+      };
+    case SET_PAGE:
+      return {
+        ...state,
+        page: state.page + 1,
       };
     default:
       return state;

@@ -61,7 +61,7 @@ const SearchBar = ({ searchNews }) => {
               </li>
 
               <li>
-                <form onSubmit={onSubmit}>
+                <form onSubmit={(onSubmit, () => {})}>
                   <input
                     type='search'
                     id='search'
@@ -94,7 +94,7 @@ const SearchBar = ({ searchNews }) => {
           </div>
         </li>
         <li>
-          <Link className='sidenav-close' to='/news_briefer/'>
+          <Link className='sidenav-close' to='/news_briefer/news'>
             World Top Stories
           </Link>
         </li>

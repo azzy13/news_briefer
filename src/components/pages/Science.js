@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Preloader from '../layout/Preloader';
 import { sciNews } from '../../actions/NewsActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NewsItem from './NewsItem';
 
-const Science = ({ new: { news, loading }, sciNews }) => {
-  useEffect(() => {
-    sciNews();
-    //eslint-disable-next-line
-  }, []);
+import InfiniteScroll from 'react-infinite-scroller';
 
-  if (loading || news === null) {
+const Science = ({ new: { scinews, loading }, sciNews }) => {
+  if (loading || scinews === null) {
     return <Preloader />;
   }
 
@@ -22,20 +19,25 @@ const Science = ({ new: { news, loading }, sciNews }) => {
         <strong>Science News</strong>{' '}
       </h5>
       <div className='UserStyle'>
-        {!loading && news.length === 0 ? (
+        {!loading && scinews.length === 0 ? (
           <Preloader />
         ) : (
-          news.map((NewsReducer) => (
+          scinews.map((NewsReducer) => (
             <NewsItem NewsReducer={NewsReducer} key={NewsReducer.title} />
           ))
         )}
+        <InfiniteScroll
+          pageStart={0}
+          loadMore={sciNews}
+          hasMore={scinews.length < 69}
+        ></InfiniteScroll>
       </div>
     </ul>
   );
 };
 
 Science.propTypes = {
-  news: PropTypes.array.isRequired,
+  scinews: PropTypes.array.isRequired,
   sciNews: PropTypes.func.isRequired,
 };
 
