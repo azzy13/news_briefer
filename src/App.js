@@ -15,6 +15,7 @@ import News from './components/pages/News';
 
 import store from './store';
 import { Provider } from 'react-redux';
+import ScrollTop from './components/layout/ScrollTop';
 
 import './App.css';
 
@@ -30,6 +31,7 @@ const App = () => {
     <Provider store={store}>
       {/* forcerefresh=true */}
       <Router>
+        <ScrollTop />
         <Fragment>
           <SearchBar />
 
