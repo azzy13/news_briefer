@@ -28,7 +28,7 @@ const SearchBar = ({ searchNews }) => {
   let history = useHistory();
 
   const onSubmit = (e) => {
-    history.push(`https://azzy13.github.io/news_briefer/?q=${text}`);
+    history.push(`/news_briefer/?q=${text}`);
 
     e.preventDefault();
     if (text === '' || text === ' ') {
@@ -49,7 +49,7 @@ const SearchBar = ({ searchNews }) => {
           <div className='nav-wrapper'>
             <ul>
               <li>
-                <a href='https://azzy13.github.io/news_briefer'>
+                <a href='/news_briefer'>
                   <i className='material-icons'>insert_chart</i>
                 </a>
               </li>
@@ -97,10 +97,7 @@ const SearchBar = ({ searchNews }) => {
           </div>
         </li>
         <li>
-          <Link
-            className='sidenav-close'
-            to='https://azzy13.github.io/news_briefer/news'
-          >
+          <Link className='sidenav-close' to='/news_briefer/news'>
             World Top Stories
           </Link>
         </li>
@@ -122,7 +119,7 @@ const SearchBar = ({ searchNews }) => {
         <li>
           <Link
             className='sidenav-close'
-            to='https://azzy13.github.io/news_briefer/tech'
+            to='/news_briefer/tech'
             onClick={() => <Tech />}
           >
             Technology
@@ -131,7 +128,7 @@ const SearchBar = ({ searchNews }) => {
         <li>
           <Link
             className='sidenav-close'
-            to='https://azzy13.github.io/news_briefer/sports'
+            to='/news_briefer/sports'
             onClick={() => <Sports />}
           >
             Sports
@@ -140,7 +137,7 @@ const SearchBar = ({ searchNews }) => {
         <li>
           <Link
             className='sidenav-close'
-            to='https://azzy13.github.io/news_briefer/business'
+            to='/news_briefer/business'
             onClick={() => <Business />}
           >
             Business
@@ -149,7 +146,7 @@ const SearchBar = ({ searchNews }) => {
         <li>
           <Link
             className='sidenav-close'
-            to='https://azzy13.github.io/news_briefer/health'
+            to='/news_briefer/health'
             onClick={() => <Health />}
           >
             Health
@@ -158,7 +155,7 @@ const SearchBar = ({ searchNews }) => {
         <li>
           <Link
             className='sidenav-close'
-            to='https://azzy13.github.io/news_briefer/science'
+            to='/news_briefer/science'
             onClick={() => <Science />}
           >
             Science
@@ -167,7 +164,7 @@ const SearchBar = ({ searchNews }) => {
         <li>
           <Link
             className='sidenav-close'
-            to='https://azzy13.github.io/news_briefer/entertainment'
+            to='/news_briefer/entertainment'
             onClick={() => <Ent />}
           >
             Entertainment
@@ -177,10 +174,7 @@ const SearchBar = ({ searchNews }) => {
           <div className='divider'></div>
         </li>
         <li>
-          <Link
-            className='sidenav-close'
-            to='https://azzy13.github.io/news_briefer/about'
-          >
+          <Link className='sidenav-close' to='/news_briefer/about'>
             About
           </Link>
         </li>
