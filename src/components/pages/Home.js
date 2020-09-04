@@ -26,7 +26,7 @@ const Home = ({ new: { news, loading }, searchNews }) => {
           <InfiniteScroll
             pageStart={0}
             loadMore={searchNews}
-            hasMore={news.length < 700}
+            hasMore={news.length < 10}
           ></InfiniteScroll>
         </div>
       </ul>

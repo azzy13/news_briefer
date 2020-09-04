@@ -28,7 +28,8 @@ const App = () => {
   });
   return (
     <Provider store={store}>
-      <Router forceRefresh={true}>
+      {/* forcerefresh=true */}
+      <Router>
         <Fragment>
           <SearchBar />
 

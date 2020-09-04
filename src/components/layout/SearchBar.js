@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { searchNews } from '../../actions/NewsActions';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import Business from '../pages/Business';
 import Health from '../pages/Health';
@@ -22,13 +22,16 @@ const SearchBar = ({ searchNews }) => {
   useEffect(() => {
     //Init
     M.AutoInit();
-  });
+  }, []);
 
   const [text, setText] = useState('');
+  let history = useHistory();
 
   const onSubmit = (e) => {
+    history.push(`https://azzy13.github.io/news_briefer/?q=${text}`);
+
     e.preventDefault();
-    if (text === '') {
+    if (text === '' || text === ' ') {
       M.toast({ html: 'Please enter a topic before submitting' });
     } else {
       searchNews(text);
@@ -46,7 +49,7 @@ const SearchBar = ({ searchNews }) => {
           <div className='nav-wrapper'>
             <ul>
               <li>
-                <a href='/news_briefer/'>
+                <a href='https://azzy13.github.io/news_briefer'>
                   <i className='material-icons'>insert_chart</i>
                 </a>
               </li>
@@ -61,7 +64,7 @@ const SearchBar = ({ searchNews }) => {
               </li>
 
               <li>
-                <form onSubmit={(onSubmit, () => {})}>
+                <form onSubmit={onSubmit}>
                   <input
                     type='search'
                     id='search'
@@ -94,7 +97,10 @@ const SearchBar = ({ searchNews }) => {
           </div>
         </li>
         <li>
-          <Link className='sidenav-close' to='/news_briefer/news'>
+          <Link
+            className='sidenav-close'
+            to='https://azzy13.github.io/news_briefer/news'
+          >
             World Top Stories
           </Link>
         </li>
@@ -104,7 +110,7 @@ const SearchBar = ({ searchNews }) => {
         <li>
           <Link
             className='sidenav-close'
-            to='/news_briefer/india'
+            to='https://azzy13.github.io/news_briefer/india'
             onClick={() => <India />}
           >
             India
@@ -116,7 +122,7 @@ const SearchBar = ({ searchNews }) => {
         <li>
           <Link
             className='sidenav-close'
-            to='/news_briefer/tech'
+            to='https://azzy13.github.io/news_briefer/tech'
             onClick={() => <Tech />}
           >
             Technology
@@ -125,7 +131,7 @@ const SearchBar = ({ searchNews }) => {
         <li>
           <Link
             className='sidenav-close'
-            to='/news_briefer/sports'
+            to='https://azzy13.github.io/news_briefer/sports'
             onClick={() => <Sports />}
           >
             Sports
@@ -134,7 +140,7 @@ const SearchBar = ({ searchNews }) => {
         <li>
           <Link
             className='sidenav-close'
-            to='/news_briefer/business'
+            to='https://azzy13.github.io/news_briefer/business'
             onClick={() => <Business />}
           >
             Business
@@ -143,7 +149,7 @@ const SearchBar = ({ searchNews }) => {
         <li>
           <Link
             className='sidenav-close'
-            to='/news_briefer/health'
+            to='https://azzy13.github.io/news_briefer/health'
             onClick={() => <Health />}
           >
             Health
@@ -152,7 +158,7 @@ const SearchBar = ({ searchNews }) => {
         <li>
           <Link
             className='sidenav-close'
-            to='/news_briefer/science'
+            to='https://azzy13.github.io/news_briefer/science'
             onClick={() => <Science />}
           >
             Science
@@ -161,7 +167,7 @@ const SearchBar = ({ searchNews }) => {
         <li>
           <Link
             className='sidenav-close'
-            to='/news_briefer/entertainment'
+            to='https://azzy13.github.io/news_briefer/entertainment'
             onClick={() => <Ent />}
           >
             Entertainment
@@ -171,16 +177,11 @@ const SearchBar = ({ searchNews }) => {
           <div className='divider'></div>
         </li>
         <li>
-          <Link className='sidenav-close' to='/news_briefer/about'>
+          <Link
+            className='sidenav-close'
+            to='https://azzy13.github.io/news_briefer/about'
+          >
             About
-          </Link>
-        </li>
-        <li>
-          <div className='divider'></div>
-        </li>
-        <li>
-          <Link className='sidenav-close' to='/news_briefer/login'>
-            Login
           </Link>
         </li>
       </ul>
