@@ -110,7 +110,7 @@ const SearchBar = ({ searchNews }) => {
         <li>
           <Link
             className='sidenav-close'
-            to='https://azzy13.github.io/news_briefer/india'
+            to='/news_briefer/india'
             onClick={() => <India />}
           >
             India
