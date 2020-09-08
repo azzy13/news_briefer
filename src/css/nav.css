@@ -75,12 +75,18 @@ a.cus_heading:hover {
   text-decoration: underline;
 }
 
-a.btn {
-  background-color: #ff69b4;
+a.cus_btn_left:hover {
+  background-color: #ff2e96;
+  text-decoration: underline;
 }
 
-a.btn:hover {
-  background-color: #ff2e96;
+a.cus_btn_right:hover {
+  background-color: #4c70ba;
+  text-decoration: underline;
+}
+
+a.cus_btn_middle:hover {
+  background-color: #83c3f3;
   text-decoration: underline;
 }
 
@@ -93,11 +99,28 @@ a.btn:hover {
   margin: auto;
 }
 
-a.cus_btn {
+a.cus_btn_left {
   position: absolute;
   bottom: 0;
   left: 2px;
   margin: 7px;
+  background-color: #ff69b4;
+}
+
+a.cus_btn_right {
+  position: absolute;
+  bottom: 0;
+  right: 2px;
+  margin: 7px;
+  background-color: #3b5998;
+}
+
+a.cus_btn_middle {
+  position: absolute;
+  bottom: 0;
+  right: 12%;
+  margin: 7px;
+  background-color: #55acee;
 }
 
 div.cus_container {

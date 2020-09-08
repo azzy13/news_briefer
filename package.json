@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "dateformat": "^3.0.3",
     "materialize-css": "^1.0.0-rc.2",
+    "materialize-social": "^1.0.3",
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
