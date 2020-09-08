@@ -11,6 +11,7 @@ import {
   TECH_NEWS,
   HEALTH_NEWS,
   SET_PAGE,
+  CLEAR_NEWS,
 } from '../actions/types';
 
 const initialState = {
@@ -30,6 +31,11 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case CLEAR_NEWS:
+      return {
+        ...state,
+        news: [],
+      };
     case SET_LOADING:
       return {
         ...state,

@@ -37,7 +37,6 @@ const Health = ({ new: { healthnews, loading }, healthNews }) => {
 };
 
 Health.propTypes = {
-  healthnews: PropTypes.array.isRequired,
   healthNews: PropTypes.func.isRequired,
 };
 

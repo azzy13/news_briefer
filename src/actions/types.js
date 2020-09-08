@@ -10,3 +10,4 @@ export const SPORTS_NEWS = 'SPORTS_NEWS';
 export const SCIENCE_NEWS = 'SCIENCE_NEWS';
 export const ENT_NEWS = 'ENT_NEWS';
 export const SET_PAGE = 'SET_PAGE';
+export const CLEAR_NEWS = 'CLEAR_NEWS';

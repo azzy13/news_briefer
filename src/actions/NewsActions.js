@@ -11,6 +11,7 @@ import {
   TECH_NEWS,
   HEALTH_NEWS,
   SET_PAGE,
+  CLEAR_NEWS,
 } from './types';
 //fetch news
 export const getNews = (page) => async (dispatch) => {
@@ -37,12 +38,12 @@ export const getNews = (page) => async (dispatch) => {
 };
 
 // Search logs
-export const searchNews = (text) => async (dispatch) => {
+export const searchNews = (text, page) => async (dispatch) => {
   try {
     setLoading();
 
     const res = await fetch(
-      `https://yacdn.org/proxy/https://newsapi.org/v2/everything?q=${text}&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
+      `https://yacdn.org/proxy/https://newsapi.org/v2/everything?q=${text}&page=${page}&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
     );
     const data = await res.json();
 
@@ -225,6 +226,13 @@ export const busNews = (page) => async (dispatch) => {
 export const setLoading = () => {
   return {
     type: SET_LOADING,
+  };
+};
+
+//Clears news
+export const clearNews = () => {
+  return {
+    type: CLEAR_NEWS,
   };
 };
 

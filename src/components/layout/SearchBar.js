@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { searchNews } from '../../actions/NewsActions';
+import { searchNews, clearNews } from '../../actions/NewsActions';
 import { Link, useHistory } from 'react-router-dom';
 
 import Business from '../pages/Business';
@@ -18,7 +18,7 @@ import '../../css/nav.css';
 import bgpic from '../../img/bgimg.jpg';
 import pic from '../../img/shk.jpg';
 
-const SearchBar = ({ searchNews }) => {
+const SearchBar = ({ searchNews, clearNews }) => {
   useEffect(() => {
     //Init
     M.AutoInit();
@@ -34,6 +34,7 @@ const SearchBar = ({ searchNews }) => {
     if (text === '' || text === ' ') {
       M.toast({ html: 'Please enter a topic before submitting' });
     } else {
+      clearNews();
       searchNews(text);
     }
   };
@@ -187,4 +188,4 @@ SearchBar.propTypes = {
   searchNews: PropTypes.func.isRequired,
 };
 
-export default connect(null, { searchNews })(SearchBar);
+export default connect(null, { searchNews, clearNews })(SearchBar);

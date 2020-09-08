@@ -7,13 +7,14 @@ import NewsItem from './NewsItem';
 
 import InfiniteScroll from 'react-infinite-scroller';
 
-const Home = ({ new: { news, loading }, searchNews }) => {
+const Home = ({ new: { news, loading }, searchNews, props }) => {
+  // let text = props.location.search;
   return (
     <div>
       <ul>
         <br />
         <h5 className='center pink-text'>
-          <strong>Search News</strong>{' '}
+          <strong>Search News</strong>
         </h5>
         <div className='UserStyle'>
           {!loading && news.length === 0 ? (
@@ -23,8 +24,9 @@ const Home = ({ new: { news, loading }, searchNews }) => {
               <NewsItem NewsReducer={NewsReducer} key={NewsReducer.title} />
             ))
           )}
+
           <InfiniteScroll
-            pageStart={0}
+            pageStart={1}
             loadMore={searchNews}
             hasMore={news.length < 10}
           ></InfiniteScroll>
