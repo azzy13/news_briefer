@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Preloader from '../layout/Preloader';
 import { searchNews } from '../../actions/NewsActions';
 import PropTypes from 'prop-types';
@@ -7,9 +7,11 @@ import NewsItem from './NewsItem';
 import UserContext from '../../config/UserContext';
 import { Redirect } from 'react-router-dom';
 
-import InfiniteScroll from 'react-infinite-scroller';
-
 const Home = ({ new: { news, loading }, searchNews }) => {
+  useEffect(() => {
+    searchNews();
+  }, []);
+
   const context = useContext(UserContext);
 
   if (!context.user?.uid) {
@@ -30,12 +32,6 @@ const Home = ({ new: { news, loading }, searchNews }) => {
               <NewsItem NewsReducer={NewsReducer} key={NewsReducer.title} />
             ))
           )}
-
-          <InfiniteScroll
-            pageStart={1}
-            loadMore={searchNews}
-            hasMore={news.length < 10}
-          ></InfiniteScroll>
         </div>
       </ul>
     </div>
