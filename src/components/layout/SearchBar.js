@@ -21,12 +21,12 @@ import pic from '../../img/shk.jpg';
 import UserContext from '../../config/UserContext';
 
 const SearchBar = ({ searchNews, clearNews }) => {
+  const context = useContext(UserContext);
+
   useEffect(() => {
     //Init
     M.AutoInit();
   }, []);
-
-  const context = useContext(UserContext);
 
   const [text, setText] = useState('');
   let history = useHistory();
@@ -94,10 +94,10 @@ const SearchBar = ({ searchNews, clearNews }) => {
               <img className='circle' src={pic} alt='user_img' />
             </a>
             <a href='#!'>
-              <span className='black-text name'>Lord Kanki</span>
+              <span className='black-text name'>{context.user?.name}</span>
             </a>
             <a href='#!'>
-              <span className='black-text email'>jdandturk69@gmail.com</span>
+              <span className='black-text email'>{context.user?.email}</span>
             </a>
           </div>
         </li>
@@ -200,15 +200,6 @@ const SearchBar = ({ searchNews, clearNews }) => {
           </Fragment>
         ) : (
           <Fragment>
-            <li>
-              <Link
-                tag={Link}
-                to='/news_briefer/register'
-                className='sidenav-close'
-              >
-                Register
-              </Link>
-            </li>
             <li>
               <Link
                 tag={Link}

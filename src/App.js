@@ -46,7 +46,6 @@ const App = () => {
   return (
     <Provider store={store}>
       <UserContext.Provider value={{ user, setUser }}>
-        {/* forcerefresh=true */}
         <Router>
           <ToastContainer />
           <ScrollTop />
