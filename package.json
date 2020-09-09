@@ -8,6 +8,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "dateformat": "^3.0.3",
+    "firebase": "^7.19.1",
     "materialize-css": "^1.0.0-rc.2",
     "materialize-social": "^1.0.3",
     "moment": "^2.27.0",
@@ -17,6 +18,7 @@
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-toastify": "^6.0.8",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"

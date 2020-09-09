@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { searchNews, clearNews } from '../../actions/NewsActions';
@@ -18,11 +18,15 @@ import '../../css/nav.css';
 import bgpic from '../../img/bgimg.jpg';
 import pic from '../../img/shk.jpg';
 
+import UserContext from '../../config/UserContext';
+
 const SearchBar = ({ searchNews, clearNews }) => {
   useEffect(() => {
     //Init
     M.AutoInit();
   }, []);
+
+  const context = useContext(UserContext);
 
   const [text, setText] = useState('');
   let history = useHistory();
@@ -179,6 +183,43 @@ const SearchBar = ({ searchNews, clearNews }) => {
             About
           </Link>
         </li>
+        <div className='divider'></div>
+        {context.user ? (
+          <Fragment>
+            <li>
+              <Link
+                onClick={() => {
+                  context.setUser(null);
+                }}
+                className='sidenav-close'
+                to='/news_briefer/login'
+              >
+                Logout
+              </Link>
+            </li>
+          </Fragment>
+        ) : (
+          <Fragment>
+            <li>
+              <Link
+                tag={Link}
+                to='/news_briefer/register'
+                className='sidenav-close'
+              >
+                Register
+              </Link>
+            </li>
+            <li>
+              <Link
+                tag={Link}
+                to='/news_briefer/login'
+                className='sidenav-close'
+              >
+                Login
+              </Link>
+            </li>
+          </Fragment>
+        )}
       </ul>
     </div>
   );

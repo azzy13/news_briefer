@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Preloader from '../layout/Preloader';
 import { busNews } from '../../actions/NewsActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NewsItem from './NewsItem';
+import UserContext from '../../config/UserContext';
+import { Redirect } from 'react-router-dom';
 
 import InfiniteScroll from 'react-infinite-scroller';
 
 const Business = ({ new: { busnews, loading }, busNews }) => {
-  if (loading || busnews === null) {
-    return <Preloader />;
-  }
+  const context = useContext(UserContext);
 
+  if (!context.user?.uid) {
+    return <Redirect to='/news_briefer/login' />;
+  }
   return (
     <ul>
       <br />

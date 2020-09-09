@@ -12,6 +12,7 @@ import {
   HEALTH_NEWS,
   SET_PAGE,
   CLEAR_NEWS,
+  SET_USER,
 } from '../actions/types';
 
 const initialState = {
@@ -27,10 +28,16 @@ const initialState = {
   page: 1,
   loading: false,
   errors: null,
+  user: null,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case SET_USER:
+      return {
+        ...state,
+        user: action.payload,
+      };
     case CLEAR_NEWS:
       return {
         ...state,

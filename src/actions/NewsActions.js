@@ -12,6 +12,7 @@ import {
   HEALTH_NEWS,
   SET_PAGE,
   CLEAR_NEWS,
+  SET_USER,
 } from './types';
 //fetch news
 export const getNews = (page) => async (dispatch) => {
@@ -240,5 +241,12 @@ export const clearNews = () => {
 export const setPage = () => {
   return {
     type: SET_PAGE,
+  };
+};
+
+//get User
+export const setUser = () => {
+  return {
+    type: SET_USER,
   };
 };
