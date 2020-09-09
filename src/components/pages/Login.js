@@ -101,7 +101,7 @@ const Login = () => {
           style={{ color: '#26a69a', fontSize: '20px' }}
         >
           Don't have an account?{' '}
-          <Link className='btn' href='/news_briefer/register'>
+          <Link className='btn' to='/news_briefer/register'>
             Register Here
           </Link>{' '}
         </p>

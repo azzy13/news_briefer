@@ -115,7 +115,7 @@ const Register = () => {
           style={{ color: '#26a69a', fontSize: '20px' }}
         >
           Have an account already?{' '}
-          <Link className='btn' href='/news_briefer/login'>
+          <Link className='btn' to='/news_briefer/login'>
             Login Here
           </Link>{' '}
         </p>
