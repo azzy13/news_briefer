@@ -41,7 +41,7 @@ const Login = () => {
   return (
     <Fragment>
       <br />
-      <div className='card' style={{ margin: '4rem 12rem' }}>
+      <div className='card cus_card_login'>
         <h5 className='center-align' style={{ color: '#26a69a' }}>
           Please Login to continue
         </h5>

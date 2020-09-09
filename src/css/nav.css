@@ -8,6 +8,17 @@
   }
 }
 
+@media only screen and (min-width: 300px) {
+  div.cus_card_login {
+    margin: 1rem 2rem;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  div.cus_card_login {
+    margin: 4rem 12rem;
+  }
+}
+
 @media only screen and (min-width: 750px) {
   #search {
     background-color: white;
