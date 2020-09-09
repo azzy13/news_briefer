@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import firebase from 'firebase/app';
 import { Redirect } from 'react-router-dom';
@@ -114,9 +115,9 @@ const Register = () => {
           style={{ color: '#26a69a', fontSize: '20px' }}
         >
           Have an account already?{' '}
-          <a className='btn' href='/news_briefer/login'>
+          <Link className='btn' href='/news_briefer/login'>
             Login Here
-          </a>{' '}
+          </Link>{' '}
         </p>
       </div>
     </Fragment>

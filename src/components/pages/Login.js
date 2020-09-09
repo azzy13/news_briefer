@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import firebase from 'firebase/app';
 import { Redirect } from 'react-router-dom';
 import UserContext from '../../config/UserContext';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const context = useContext(UserContext);
@@ -100,9 +101,9 @@ const Login = () => {
           style={{ color: '#26a69a', fontSize: '20px' }}
         >
           Don't have an account?{' '}
-          <a className='btn' href='/news_briefer/register'>
+          <Link className='btn' href='/news_briefer/register'>
             Register Here
-          </a>{' '}
+          </Link>{' '}
         </p>
       </div>
     </Fragment>
