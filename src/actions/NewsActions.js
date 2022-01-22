@@ -20,7 +20,7 @@ export const getNews = (page) => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&language=en&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&language=en&apiKey=ad2da63f7b9844b4a366d4c19afb0537`,
     );
     const data = await res.json();
 
@@ -44,7 +44,7 @@ export const searchNews = (text, page) => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      `https://yacdn.org/proxy/https://newsapi.org/v2/everything?q=${text}&page=${page}&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
+      `https://yacdn.org/proxy/https://newsapi.org/v2/everything?q=${text}&page=${page}&apiKey=ad2da63f7b9844b4a366d4c19afb0537`,
     );
     const data = await res.json();
 
@@ -68,7 +68,7 @@ export const indNews = (page) => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=in&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
+      `https://newsapi.org/v2/top-headlines?page=${page}&country=in&apiKey=ad2da63f7b9844b4a366d4c19afb0537`,
     );
     const data = await res.json();
     dispatch({
@@ -91,7 +91,7 @@ export const sciNews = (page) => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=us&category=science&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=us&category=science&apiKey=ad2da63f7b9844b4a366d4c19afb0537`,
     );
     const data = await res.json();
     dispatch({
@@ -114,7 +114,7 @@ export const sportNews = (page) => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=in&category=sports&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=in&category=sports&apiKey=ad2da63f7b9844b4a366d4c19afb0537`,
     );
     const data = await res.json();
     dispatch({
@@ -137,7 +137,7 @@ export const entNews = (page) => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=us&category=entertainment&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=us&category=entertainment&apiKey=ad2da63f7b9844b4a366d4c19afb0537`,
     );
     const data = await res.json();
     dispatch({
@@ -160,7 +160,7 @@ export const techNews = (page) => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&category=technology&country=us&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&category=technology&country=us&apiKey=ad2da63f7b9844b4a366d4c19afb0537`,
     );
     const data = await res.json();
     dispatch({
@@ -183,7 +183,7 @@ export const healthNews = (page) => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=us&category=health&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=us&category=health&apiKey=ad2da63f7b9844b4a366d4c19afb0537`,
     );
     const data = await res.json();
     dispatch({
@@ -206,7 +206,7 @@ export const busNews = (page) => async (dispatch) => {
     setLoading();
 
     const res = await fetch(
-      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=us&category=business&apiKey=ad2da63f7b9844b4a366d4c19afb0537`
+      `https://yacdn.org/proxy/https://newsapi.org/v2/top-headlines?page=${page}&country=us&category=business&apiKey=ad2da63f7b9844b4a366d4c19afb0537`,
     );
     const data = await res.json();
     dispatch({
